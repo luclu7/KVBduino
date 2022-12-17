@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "buttons/buttonsSend.h"
+#include "buttons/buttonsSend.hpp"
 
 void setLamp(const int input, const int led);
 void sendButtonToSerial(ButtonsSend buttons);

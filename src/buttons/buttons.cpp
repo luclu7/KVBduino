@@ -1,5 +1,5 @@
-#include "buttons.h"
-#include "pins.h"
+#include "buttons.hpp"
+#include "pins.hpp"
 
 KVBButtons Buttons(BP_VAL, BP_MV, BP_FC, BP_TEST, BP_SF);
 

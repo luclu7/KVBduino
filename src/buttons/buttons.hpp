@@ -2,7 +2,7 @@
 #define BUTTONS_H
 // pour le debouncing
 #include <Bounce2.h>
-#include "buttonsSend.h"
+#include "buttonsSend.hpp"
 
 
 class KVBButtons

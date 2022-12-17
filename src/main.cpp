@@ -2,14 +2,14 @@
 #include <string.h>
 #include <Arduino.h>
 
-#include "helper.h"
-#include "definitions.h"
-#include "7segs/7segs.h"
-#include "buttons/buttons.h"
-#include "serial/serial.h"
+#include "helper.hpp"
+#include "definitions.hpp"
+#include "7segs/7segs.hpp"
+#include "buttons/buttons.hpp"
+#include "serial/serial.hpp"
 
 // TEMP
-#include "pins.h"
+#include "pins.hpp"
 
 // audio
 #include "DYPlayerArduino.h"

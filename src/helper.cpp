@@ -1,5 +1,5 @@
-#include "helper.h"
-#include "pins.h"
+#include "helper.hpp"
+#include "pins.hpp"
 
 #include "Arduino.h"
 #include "ArduinoJson.h"

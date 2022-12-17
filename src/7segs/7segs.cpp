@@ -4,7 +4,7 @@
 using ace_tmi::SimpleTmi1637Interface;
 using ace_segment::Tm1637Module;
 
-#include "definitions.h"
+#include "definitions.hpp"
 
 // pins du TM1637
 const uint8_t CLK_PIN = 25;

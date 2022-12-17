@@ -1,9 +1,9 @@
-#include "serial.h"
+#include "serial.hpp"
 
-#include "../7segs/7segs.h"
-#include "../definitions.h"
-#include "../pins.h"
-#include "../helper.h"
+#include "../7segs/7segs.hpp"
+#include "../definitions.hpp"
+#include "../pins.hpp"
+#include "../helper.hpp"
 
 
 void handleSerialInput(SerialInput input) {

@@ -21,17 +21,17 @@ void setLamp(const int input, const int led) {
 
 void sendButtonToSerial(ButtonsSend buttons) {
   String toPrint;
-  
-  BPOutput["VAL"] = buttons.VAL;
-  BPOutput["MV"] = buttons.MV;
-  BPOutput["FC"] = buttons.FC;
-  BPOutput["TEST"] = buttons.TEST;
-  BPOutput["SF"] = buttons.SF;
-  
-  serializeJson(BPOutput, toPrint);
 
+  toPrint = buttons.toJSON(); 
+ 
   //if (toPrint != lastSentStrings[0]) {
-    Serial.println(toPrint);
+  #if DEBUG
+    Serial.println("# "+toPrint);
+    Serial.print("# Size: ");
+    Serial.println(sizeof(toPrint));
+  #endif
+    Serial.write(buttons.toBytes());
+    Serial.write(0x0a);
     #if !DEBUG
     lastSentStringsBP = toPrint;
     #endif

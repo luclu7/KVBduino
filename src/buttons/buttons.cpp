@@ -43,14 +43,9 @@ bool KVBButtons::hasChanged(void) {
 }
 
 ButtonsSend KVBButtons::readButtons(void) {
-    ButtonsSend toSend;
+    ButtonsSend toSend(!this->VALbtn.read(), !this->MVbtn.read(), !this->FCbtn.read(), !this->TESTbtn.read(), !this->SFbtn.read());
 
     /* lecture de tous les boutons */
-    toSend.VAL  = !this->VALbtn.read();
-    toSend.MV   = !this-> MVbtn.read();
-    toSend.FC   = !this->FCbtn.read();
-    toSend.TEST = !this->TESTbtn.read();
-    toSend.SF   = !this->SFbtn.read();
 
     return toSend;
 }

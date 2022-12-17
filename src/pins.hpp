@@ -2,9 +2,16 @@
 #define PINS_H
 
 // définition pins rétroéclairage des boutons et lampes
-#define LS_BP_VAL 24
-#define LS_BP_MV 26
-#define LS_BP_FC 28
+#define LS_SF			22
+
+#define LS_BP_VAL		24
+#define LS_BP_MV		26
+#define LS_BP_FC        28
+
+#define LS_V            30
+#define LS_FU           32
+#define LS_PANNE_SOL    34
+#define LS_PANNE_ENGIN	36
 
 // définition pins boutons
 #define BP_VAL  29
@@ -51,6 +58,6 @@ const int switchPins[] = {SW_VO, SW_MA};
 
 const int BPPins[] = {BP_VAL, BP_MV, BP_FC, BP_TEST};
 
-const int BPlightPins[] = {LS_BP_VAL, LS_BP_MV, LS_BP_FC};
+const int lightPins[] = {LS_SF, LS_BP_VAL, LS_BP_MV, LS_BP_FC, LS_V, LS_FU, LS_PANNE_SOL, LS_PANNE_ENGIN};
 
 #endif

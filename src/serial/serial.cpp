@@ -90,7 +90,7 @@ void handleSerialInput(SerialInput input) {
     setLamp(panneSol, SOL_LED);
     setLamp(panneEngin, ENGIN_LED);
     setLamp(FCLight, FC_LIGHT); */
-    Serial.println("VAL: "+String(input.VALLight));
-    setLamp(input.VALLight, LS_BP_VAL);
+    Serial.println("LSSF: "+String(input.LSSF));
+    setLamp(input.LSSF, LS_SF);
   }
 }

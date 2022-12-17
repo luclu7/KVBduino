@@ -106,6 +106,7 @@ void loop(void) {
 		int CG = doc["CG"];         // 1
 		int FCLight = doc["FC"];         // 1
 		int VALLight = doc["VAL"];         // 1
+		int LSSF = doc["LSSF"];         // 1
 
 		Serial.println(received);
 
@@ -119,10 +120,11 @@ void loop(void) {
 		Serial.print(" CG: "+String(CG));
 		Serial.print(" FCLight: "+String(FCLight));
 		Serial.print(" VALLight: "+String(VALLight));
+		Serial.print(" LSSF: "+String(LSSF));
 		Serial.println();
 
 		// create object
-		SerialInput input = {visu, autotestTS, LSFU, LSV, panneSol, panneEngin, CG, FCLight, VALLight};
+		SerialInput input = {visu, autotestTS, LSFU, LSV, panneSol, panneEngin, CG, FCLight, VALLight, LSSF};
 
 		handleSerialInput(input);
 

@@ -59,7 +59,7 @@ void configurePins(void) {
   }
 
   for (int i = 0; i < 3; i++ ) {
-    pinMode(BPlightPins[i], OUTPUT);
+    pinMode(lightPins[i], OUTPUT);
   }
 
 }

@@ -6,8 +6,11 @@
 #include "../helper.hpp"
 
 
+/*
+  *  Fonction qui gère l'entrée série
+  *  @param input: données reçues, sous forme d'un objet SerialInput
+*/
 void handleSerialInput(SerialInput input) {
-  
   if (input.autotestTS == 1 || input.autotestTS == 2 || input.autotestTS == 3)
   {
   switch (input.autotestTS)
@@ -35,7 +38,7 @@ void handleSerialInput(SerialInput input) {
     }
   } else
   {
-    Serial.println("visu: "+String(input.visu));
+    Serial.println("# visu: "+String(input.visu));
     switch (input.visu)
     {
       case 0: // éteint
@@ -90,7 +93,7 @@ void handleSerialInput(SerialInput input) {
     setLamp(panneSol, SOL_LED);
     setLamp(panneEngin, ENGIN_LED);
     setLamp(FCLight, FC_LIGHT); */
-    Serial.println("LSSF: "+String(input.LSSF));
+    Serial.println("# LSSF: "+String(input.LSSF));
     setLamp(input.LSSF, LS_SF);
   }
 }

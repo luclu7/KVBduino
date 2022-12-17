@@ -1,6 +1,15 @@
 #include "buttonsSend.hpp"
 #include "ArduinoJson.h"
 
+/*
+    * constructeur qui prend en entrée les valeurs des boutons, déjà lues préalablement
+    * @param VAL : bouton VAL
+    * @param MV : bouton MV
+    * @param FC : bouton FC
+    * @param TEST : bouton TEST
+    * @param SF : bouton SF
+    * @return ButtonsSend
+*/
 ButtonsSend::ButtonsSend(bool VAL, bool MV, bool FC, bool TEST, bool SF) {
     this->VAL = VAL;
     this->MV = MV;
@@ -13,6 +22,7 @@ ButtonsSend::~ButtonsSend(void) {
 
 }
 
+/* conversion de l'état des différents boutons en un seul char à envoyer */
 unsigned char ButtonsSend::toBytes(void) {
     unsigned char toSend = 0;
 
@@ -39,6 +49,9 @@ unsigned char ButtonsSend::toBytes(void) {
     return toSend;
 }
 
+/*
+    * conversion en JSON, pour le debug et les tests
+*/
 String ButtonsSend::toJSON(void) {
     String toPrint;
     StaticJsonDocument<128> BPOutput;

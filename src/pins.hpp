@@ -21,6 +21,7 @@
 #define BP_SF   37
 
 // pins roue codeuse
+// rows (les différentes positions)
 #define P0 52
 #define P1 50
 #define P2 48
@@ -32,6 +33,7 @@
 #define P8 47
 #define P9 46
 
+// columns (les différentes roues codeuses)
 #define V_1 2
 #define V_2 3
 
@@ -50,6 +52,10 @@
 // TS: bip_V_control
 #define BEEP_V 11
 
+
+/*
+    * tableau des pins, pour les boucles
+*/
 const int pins[] = {P0, P1, P2, P3, P4, P5, P6, P7, P8, P9};
 
 const int digits[] = {V_1, V_2, L_1, D_1, D_2, D_3};

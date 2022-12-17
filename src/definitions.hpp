@@ -1,5 +1,8 @@
 #include <stdint.h>
 
+/*
+    liste des patterns pour les 7 segments
+*/
 const uint8_t LTV[] = {0b00000000, 0b01110011, 0b00000000, 0b00000000}; // ça existe?
 
 const uint8_t eteint[] = {0b00000000, 0b00000000, 0b00000000,
@@ -32,6 +35,7 @@ const uint8_t autotest[] = {0b01111111, 0b01111111, 0b01111111,
 const uint8_t faute[] = {0b00000000, 0b11110001, 0b00000000,
                          0b00000000, 0b00000000, 0b00000000
                         };       // 9.0
+
 // autotest
 const uint8_t PA400[] = {0b01100110, 0b00111111, 0b00111111,
                          0b00000000, 0b01110011, 0b01110111

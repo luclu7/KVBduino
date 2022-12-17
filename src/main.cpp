@@ -20,7 +20,7 @@ DY::Player player(&Serial2);
 // pour la transmission PC
 #include <ArduinoJson.h>
 
-#define DEBUG 1
+#define DEBUG 0
 #define SKIPTEST 1
 
 // utilisé pour stocker l'entrée serial
@@ -70,7 +70,7 @@ void setup() {
 void loop(void) {
 	String toPrint;
 
-	/* on regarde si les boutons ont changé d'état depuis le dernier cycle */
+	/* lecture de l'état des boutons */
 	updateButtons();
 
 	/* on regarde si les boutons ont changé d'état depuis le dernier cycle */
@@ -89,13 +89,13 @@ void loop(void) {
 	{
 		inData += received; // on ajoute le caractère reçu à la chaîne de caractères
 		#if DEBUG
-		Serial.println(received); // on affiche le caractère reçu, debug
+		Serial.println("# debug : " + received); // on affiche le caractère reçu, debug
 		#endif
 	}
 	// Process message when new line character is received
 	if (received == '\n')
 	{
-		Serial.println(inData);
+		Serial.println("#"+ inData);
 		deserializeJson(doc, inData);
 		int visu = doc["visu"];       // 1
 		int autotestTS = doc["autotest"]; // 3
@@ -103,15 +103,14 @@ void loop(void) {
 		int LSV = doc["LSV"];         // 1
 		int panneSol = doc["SOL"];         // 1
 		int panneEngin = doc["ENGIN"];         // 1
-		int CG = doc["CG"];         // 1
 		int FCLight = doc["FC"];         // 1
 		int VALLight = doc["VAL"];         // 1
 		int LSSF = doc["LSSF"];         // 1
 
-		Serial.println(received);
+		Serial.println("#"+received);
 
 		// print visu, autotestTS, LSFU, LSV, panneSol, panneEngin, CG, FCLight, VALLight in serial
-		Serial.print("visu: "+String(visu));
+	/*	Serial.print("# visu: "+String(visu));
 		Serial.print(" autotestTS: "+String(autotestTS));
 		Serial.print(" LSFU: "+String(LSFU));
 		Serial.print(" LSV: "+String(LSV));
@@ -122,9 +121,10 @@ void loop(void) {
 		Serial.print(" VALLight: "+String(VALLight));
 		Serial.print(" LSSF: "+String(LSSF));
 		Serial.println();
+		*/
 
 		// create object
-		SerialInput input = {visu, autotestTS, LSFU, LSV, panneSol, panneEngin, CG, FCLight, VALLight, LSSF};
+		SerialInput input = {visu, autotestTS, LSFU, LSV, panneSol, panneEngin, FCLight, VALLight, LSSF};
 
 		handleSerialInput(input);
 

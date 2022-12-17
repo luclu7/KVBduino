@@ -19,6 +19,7 @@ void setLamp(const int input, const int led) {
   }
 }
 
+
 void sendButtonToSerial(ButtonsSend buttons) {
   String toPrint;
 
@@ -36,16 +37,11 @@ void sendButtonToSerial(ButtonsSend buttons) {
     lastSentStringsBP = toPrint;
     #endif
   //}
-
-  /*
-  if(TESTbtn) {
-    digitalWrite(BEEP_V, HIGH);
-      player.playSpecified(5);
-  } else {
-    digitalWrite(BEEP_V, LOW);
-  }*/
 }
 
+/*
+  * configuration des pins en entrée/sortie
+*/
 void configurePins(void) {
 
   for (int i = 0; i < 10; i++ ) {
@@ -64,6 +60,13 @@ void configurePins(void) {
 
 }
 
+// TODO: faire un truc qui marche correctement
+/*
+  * lecture de des roues codeuses un peu comme
+  * une matrice de 10x6
+  * on allume une colonne, et on lit les lignes
+  * on allume la colonne suivante, etc
+*/
 String readAllThumbWheels(void) {
 
   unsigned long now = millis();
@@ -135,6 +138,13 @@ String readAllThumbWheels(void) {
 
 }
 
+// TODO: faire un truc qui fonctionne
+/*
+  * lecture de l'état du switch tripositions (ME, VO, MA)
+  * problèmes: les pins sont partagés avec les roues codeuses
+  * donc il faut les remettre en état après lecture
+  * Alternative: câbler le switch sur d'autres pins
+*/
 int getSwitchState(void) {
   for (int i = 0; i < 2; i++ ) {
     pinMode(switchPins[i], INPUT_PULLUP);
@@ -182,6 +192,9 @@ void blinkVAL(void) {
   delay(200);
 }
 
+/*
+  * test du bip de survitesse
+*/
 void bipTest(void) {
   // simple test du beep de survitesse
 
